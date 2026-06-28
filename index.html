@@ -89,6 +89,17 @@
             text-decoration: underline;
             color: #b89047 !important;
         }
+
+        /* 칵테일 메뉴는 호버 효과 및 포인터 지우기 (텍스트로 고정) */
+        #cocktail-list-1 .menu-item span[data-eng],
+        #cocktail-list-2 .menu-item span[data-eng] {
+            cursor: default;
+        }
+        #cocktail-list-1 .menu-item span[data-eng]:hover,
+        #cocktail-list-2 .menu-item span[data-eng]:hover {
+            text-decoration: none;
+            color: inherit !important;
+        }
     </style>
 </head>
 <body class="min-h-screen flex flex-col items-center justify-start py-4 md:py-8 px-0 md:px-4">
@@ -124,7 +135,7 @@
     </div>
 
     <!-- Main Mobile Frame Container (High-End Tactile Cotton Paper Style) -->
-    <main id="capture-zone" class="relative w-full max-w-md h-[82vh] md:h-[780px] paper-bg border-y-4 md:border-4 border-double border-[#876646]/30 shadow-[0_15px_50px_rgba(40,30,20,0.25)] overflow-hidden flex flex-col justify-between p-6 md:p-8 md:rounded-[2.5rem] menu-card-border unified-font">
+    <main id="capture-zone" class="relative w-full max-w-md h-[82vh] md:h-[780px] paper-bg border-y-4 md:border-4 border-double border-[#876646]/30 shadow-[0_15px_50px_rgba(40,30,20,0.25)] overflow-hidden flex flex-col justify-between p-6 md:p-8 md:rounded-[2.5rem] menu-card-border unified-font font-gowun">
         
         <!-- Top Logo Border Line -->
         <div class="w-full flex items-center justify-between mb-4 flex-shrink-0">
@@ -156,16 +167,14 @@
                         <div class="w-full border-y border-[#b89047]/30 py-6 px-4 bg-white/10 rounded-xl shadow-inner">
                             <h3 class="text-xs font-bold text-[#84653e] tracking-[0.2em] mb-4 text-center uppercase" id="guide-title" data-eng="[ STANDARD GUIDE ]" data-kor="[ 기본 가이드 ]">[ 기본 가이드 ]</h3>
                             <p class="text-xs text-[#523d32] text-center leading-loose font-medium" id="guide-desc" 
-                               data-eng="∙ 모든 위스키는 40ml Standard Pour로 제공됩니다.<br>∙ 하이볼 / 탄산수 변경 옵션<br><span class='text-[#84653e]'>(진저에일 / 토닉워터 +2.0, 싱하 소다 +3.0)</span><br><br><span class='text-[10.5px] text-[#9c4c36] font-semibold'>∙ Broken Glass Charge : Riedel Spirit ₩50,000, Others ₩15,000</span>"
-                               data-kor="∙ 모든 위스키는 40ml 정량(Standard Pour)으로 제공됩니다.<br>∙ 하이볼 / 탄산수 변경 옵션<br><span class='text-[#84653e]'>(진저에일 / 토닉워터 +2.0, 싱하 탄산수 +3.0)</span><br><br><span class='text-[10.5px] text-[#9c4c36] font-semibold'>∙ 브로큰 차지 : 리델 스피릿 50,000원, 기타 15,000원</span>">
+                               data-eng="∙ 모든 위스키는 40ml Standard Pour로 제공됩니다.<br>∙ 하이볼 / 탄산수 변경 옵션<br><span class='text-[#84653e]'>(진저에일 / 토닉워터 +2.0, 싱하 소다 +3.0)</span><br><br><span class='text-[10.5px] text-[#9c4c36] font-semibold'>∙ Corkage Fee : ₩50,000 per bottle</span><br><span class='text-[10.5px] text-[#9c4c36] font-semibold'>∙ Broken Glass Charge : Riedel Spirit ₩50,000, Others ₩15,000</span>"
+                               data-kor="∙ 모든 위스키는 40ml 정량(Standard Pour)으로 제공됩니다.<br>∙ 하이볼 / 탄산수 변경 옵션<br><span class='text-[#84653e]'>(진저에일 / 토닉워터 +2.0, 싱하 탄산수 +3.0)</span><br><br><span class='text-[10.5px] text-[#9c4c36] font-semibold'>∙ 콜키지 비용 : 병 당 50,000원</span><br><span class='text-[10.5px] text-[#9c4c36] font-semibold'>∙ 브로큰 차지 : 리델 스피릿 50,000원, 기타 15,000원</span>">
                                 ∙ 모든 위스키는 40ml 정량(Standard Pour)으로 제공됩니다.<br>
                                 ∙ 하이볼 / 탄산수 변경 옵션<br>
                                 <span class="text-[#84653e] opacity-80">(진저에일 / 토닉워터 +2.0, 싱하 탄산수 +3.0)</span><br><br>
+                                <span class="text-[10.5px] text-[#9c4c36] font-semibold">∙ 콜키지 비용 : 병 당 50,000원</span><br>
                                 <span class="text-[10.5px] text-[#9c4c36] font-semibold">∙ 브로큰 차지 : 리델 스피릿 50,000원, 기타 15,000원</span>
                             </p>
-                            <div class="mt-6 pt-5 border-t border-[#b89047]/20 text-center">
-                                <p class="text-[10px] text-[#8d7c73] font-serif italic"></p>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -174,21 +183,21 @@
                 <div class="page-slide">
                     <h3 class="font-serif text-xs text-[#4a3428] font-bold tracking-wider mb-4 border-b border-[#b89047]/30 pb-1 uppercase flex-shrink-0" id="title-speyside" data-eng="Scotch Single Malt - Speyside" data-kor="스카치 싱글몰트 - 스페이사이드">스카치 싱글몰트 - 스페이사이드</h3>
                     <div class="space-y-2.5 overflow-y-auto no-scrollbar flex-1 pr-1 font-medium text-[#443126]" id="speyside-list">
-                        <div class="flex items-end justify-between text-[11px] menu-item"><span data-eng="The Glenlivet 12 YO" data-kor="글렌리벳 12년">글렌리벳 12년</span><span class="dots-leader"></span><span class="text-[#4a3428] font-bold">1.7</span></div>
-                        <div class="flex items-end justify-between text-[11px] menu-item"><span data-eng="The Glenlivet 15 YO" data-kor="글렌리벳 15년">글렌리벳 15년</span><span class="dots-leader"></span><span class="text-[#4a3428] font-bold">2.0</span></div>
-                        <div class="flex items-end justify-between text-[11px] menu-item"><span data-eng="The Glenlivet 18 YO" data-kor="글렌리벳 18년">글렌리벳 18년</span><span class="dots-leader"></span><span class="text-[#4a3428] font-bold">3.0</span></div>
-                        <div class="flex items-end justify-between text-[11px] menu-item"><span data-eng="Glen Grant 10 YO" data-kor="글렌그란트 10년">글렌그란트 10년</span><span class="dots-leader"></span><span class="text-[#4a3428] font-bold">1.5</span></div>
-                        <div class="flex items-end justify-between text-[11px] menu-item"><span data-eng="Glen Grant 12 YO" data-kor="글렌그란트 12년">글렌그란트 12년</span><span class="dots-leader"></span><span class="text-[#4a3428] font-bold">1.6</span></div>
-                        <div class="flex items-end justify-between text-[11px] menu-item"><span data-eng="Glenfiddich 12 YO" data-kor="글렌피딕 12년">글렌피딕 12년</span><span class="dots-leader"></span><span class="text-[#4a3428] font-bold">1.7</span></div>
-                        <div class="flex items-end justify-between text-[11px] menu-item"><span data-eng="Glenfiddich 15 YO" data-kor="글렌피딕 15년">글렌피딕 15년</span><span class="dots-leader"></span><span class="text-[#4a3428] font-bold">2.0</span></div>
-                        <div class="flex items-end justify-between text-[11px] menu-item"><span data-eng="The Glenrothes 12 YO" data-kor="글렌로티스 12년">글렌로티스 12년</span><span class="dots-leader"></span><span class="text-[#4a3428] font-bold">1.8</span></div>
-                        <div class="flex items-end justify-between text-[11px] menu-item"><span data-eng="GlenAllachie 12 YO" data-kor="글렌알라키 12년">글렌알라키 12년</span><span class="dots-leader"></span><span class="text-[#4a3428] font-bold">2.0</span></div>
-                        <div class="flex items-end justify-between text-[11px] menu-item"><span data-eng="GlenAllachie 15 YO" data-kor="글렌알라키 15년">글렌알라키 15년</span><span class="dots-leader"></span><span class="text-[#4a3428] font-bold">2.5</span></div>
-                        <div class="flex items-end justify-between text-[11px] menu-item"><span data-eng="GlenAllachie 10 YO CS Batch 12" data-kor="글렌알라키 10년 CS 배치 12">글렌알라키 10년 CS 배치 12</span><span class="dots-leader"></span><span class="text-[#4a3428] font-bold">2.5</span></div>
-                        <div class="flex items-end justify-between text-[11px] menu-item"><span data-eng="The Macallan 12 YO Double Cask" data-kor="맥캘란 12년 더블 캐스크">맥캘란 12년 더블 캐스크</span><span class="dots-leader"></span><span class="text-[#4a3428] font-bold">1.8</span></div>
-                        <div class="flex items-end justify-between text-[11px] menu-item"><span data-eng="The Macallan 12 YO Sherry Cask" data-kor="맥캘란 12년 셰리 캐스크">맥캘란 12년 셰리 캐스크</span><span class="dots-leader"></span><span class="text-[#4a3428] font-bold">1.9</span></div>
-                        <div class="flex items-end justify-between text-[11px] menu-item"><span data-eng="The Balvenie 12 YO" data-kor="발베니 12년 더블우드">발베니 12년 더블우드</span><span class="dots-leader"></span><span class="text-[#4a3428] font-bold">1.8</span></div>
-                        <div class="flex items-end justify-between text-[11px] menu-item"><span data-eng="The Balvenie 12 YO Single Barrel - Kelsey" data-kor="발베니 12년 싱글배럴 - 켈시">발베니 12년 싱글배럴 - 켈시</span><span class="dots-leader"></span><span class="text-[#4a3428] font-bold">1.9</span></div>
+                        <div class="flex items-end justify-between text-[11px] menu-item"><span data-eng="The Glenlivet 12 YO (40%)" data-kor="글렌리벳 12년 (40%)">글렌리벳 12년 (40%)</span><span class="dots-leader"></span><span class="text-[#4a3428] font-bold">1.7</span></div>
+                        <div class="flex items-end justify-between text-[11px] menu-item"><span data-eng="The Glenlivet 15 YO (40%)" data-kor="글렌리벳 15년 (40%)">글렌리벳 15년 (40%)</span><span class="dots-leader"></span><span class="text-[#4a3428] font-bold">2.0</span></div>
+                        <div class="flex items-end justify-between text-[11px] menu-item"><span data-eng="The Glenlivet 18 YO (43%)" data-kor="글렌리벳 18년 (43%)">글렌리벳 18년 (43%)</span><span class="dots-leader"></span><span class="text-[#4a3428] font-bold">3.0</span></div>
+                        <div class="flex items-end justify-between text-[11px] menu-item"><span data-eng="Glen Grant 10 YO (40%)" data-kor="글렌그란트 10년 (40%)">글렌그란트 10년 (40%)</span><span class="dots-leader"></span><span class="text-[#4a3428] font-bold">1.5</span></div>
+                        <div class="flex items-end justify-between text-[11px] menu-item"><span data-eng="Glen Grant 12 YO (43%)" data-kor="글렌그란트 12년 (43%)">글렌그란트 12년 (43%)</span><span class="dots-leader"></span><span class="text-[#4a3428] font-bold">1.6</span></div>
+                        <div class="flex items-end justify-between text-[11px] menu-item"><span data-eng="Glenfiddich 12 YO (40%)" data-kor="글렌피딕 12년 (40%)">글렌피딕 12년 (40%)</span><span class="dots-leader"></span><span class="text-[#4a3428] font-bold">1.7</span></div>
+                        <div class="flex items-end justify-between text-[11px] menu-item"><span data-eng="Glenfiddich 15 YO (40%)" data-kor="글렌피딕 15년 (40%)">글렌피딕 15년 (40%)</span><span class="dots-leader"></span><span class="text-[#4a3428] font-bold">2.0</span></div>
+                        <div class="flex items-end justify-between text-[11px] menu-item"><span data-eng="The Glenrothes 12 YO (40%)" data-kor="글렌로티스 12년 (40%)">글렌로티스 12년 (40%)</span><span class="dots-leader"></span><span class="text-[#4a3428] font-bold">1.8</span></div>
+                        <div class="flex items-end justify-between text-[11px] menu-item"><span data-eng="GlenAllachie 12 YO (46%)" data-kor="글렌알라키 12년 (46%)">글렌알라키 12년 (46%)</span><span class="dots-leader"></span><span class="text-[#4a3428] font-bold">2.0</span></div>
+                        <div class="flex items-end justify-between text-[11px] menu-item"><span data-eng="GlenAllachie 15 YO (46%)" data-kor="글렌알라키 15년 (46%)">글렌알라키 15년 (46%)</span><span class="dots-leader"></span><span class="text-[#4a3428] font-bold">2.5</span></div>
+                        <div class="flex items-end justify-between text-[11px] menu-item"><span data-eng="GlenAllachie 10 YO CS Batch 12 (59.7%)" data-kor="글렌알라키 10년 CS 배치 12 (59.7%)">글렌알라키 10년 CS 배치 12 (59.7%)</span><span class="dots-leader"></span><span class="text-[#4a3428] font-bold">2.5</span></div>
+                        <div class="flex items-end justify-between text-[11px] menu-item"><span data-eng="The Macallan 12 YO Double Cask (40%)" data-kor="맥캘란 12년 더블 캐스크 (40%)">맥캘란 12년 더블 캐스크 (40%)</span><span class="dots-leader"></span><span class="text-[#4a3428] font-bold">1.8</span></div>
+                        <div class="flex items-end justify-between text-[11px] menu-item"><span data-eng="The Macallan 12 YO Sherry Cask (40%)" data-kor="맥캘란 12년 셰리 캐스크 (40%)">맥캘란 12년 셰리 캐스크 (40%)</span><span class="dots-leader"></span><span class="text-[#4a3428] font-bold">1.9</span></div>
+                        <div class="flex items-end justify-between text-[11px] menu-item"><span data-eng="The Balvenie 12 YO" data-kor="발베니 12년 더블우드 (40%)">발베니 12년 더블우드 (40%)</span><span class="dots-leader"></span><span class="text-[#4a3428] font-bold">1.8</span></div>
+                        <div class="flex items-end justify-between text-[11px] menu-item"><span data-eng="The Balvenie 12 YO Single Barrel - Kelsey (47.8%)" data-kor="발베니 12년 싱글배럴 - 켈시 (47.8%)">발베니 12년 싱글배럴 - 켈시 (47.8%)</span><span class="dots-leader"></span><span class="text-[#4a3428] font-bold">1.9</span></div>
                     </div>
                 </div>
 
@@ -197,16 +206,16 @@
                     <h3 class="font-serif text-xs text-[#4a3428] font-bold tracking-wider mb-4 border-b border-[#b89047]/30 pb-1 uppercase flex-shrink-0" id="title-highland" data-eng="Highlands & Islands" data-kor="하이랜드 & 아일랜드">하이랜드 & 아일랜드</h3>
                     <div class="space-y-2.5 overflow-y-auto no-scrollbar flex-1 pr-1 font-medium text-[#443126]" id="highland-island-list">
                         <div class="text-[9px] font-bold text-[#6b4f3e] uppercase tracking-widest mt-1 mb-1" id="label-highlands" data-eng="[ HIGHLANDS ]" data-kor="[ 하이랜드 ]">[ 하이랜드 ]</div>
-                        <div class="flex items-end justify-between text-[11px] menu-item"><span data-eng="Glenmorangie The Original 12 YO" data-kor="글렌모렌지 오리지널 12년">글렌모렌지 오리지널 12년</span><span class="dots-leader"></span><span class="text-[#4a3428] font-bold">1.6</span></div>
-                        <div class="flex items-end justify-between text-[11px] menu-item"><span data-eng="Glenmorangie Quinta Ruban" data-kor="글렌모렌지 퀸타루반">글렌모렌지 퀸타루반</span><span class="dots-leader"></span><span class="text-[#4a3428] font-bold">1.9</span></div>
-                        <div class="flex items-end justify-between text-[11px] menu-item"><span data-eng="GlenDronach 12 YO" data-kor="글렌드로낙 12년">글렌드로낙 12년</span><span class="dots-leader"></span><span class="text-[#4a3428] font-bold">1.8</span></div>
-                        <div class="flex items-end justify-between text-[11px] menu-item"><span data-eng="Edradour 10 YO" data-kor="에드라두어 10년">에드라두어 10년</span><span class="dots-leader"></span><span class="text-[#4a3428] font-bold">2.5</span></div>
-                        <div class="flex items-end justify-between text-[11px] menu-item"><span data-eng="Glen Garioch 15 YO" data-kor="글렌기어리 15년">글렌기어리 15년</span><span class="dots-leader"></span><span class="text-[#4a3428] font-bold">3.5</span></div>
-                        <div class="flex items-end justify-between text-[11px] menu-item"><span data-eng="The Dalmore 12 YO" data-kor="달모어 12년">달모어 12년</span><span class="dots-leader"></span><span class="text-[#4a3428] font-bold">1.9</span></div>
+                        <div class="flex items-end justify-between text-[11px] menu-item"><span data-eng="Glenmorangie The Original 12 YO (40%)" data-kor="글렌모렌지 오리지널 12년 (40%)">글렌모렌지 오리지널 12년 (40%)</span><span class="dots-leader"></span><span class="text-[#4a3428] font-bold">1.6</span></div>
+                        <div class="flex items-end justify-between text-[11px] menu-item"><span data-eng="Glenmorangie Quinta Ruban (46%)" data-kor="글렌모렌지 퀸타루반 (46%)">글렌모렌지 퀸타루반 (46%)</span><span class="dots-leader"></span><span class="text-[#4a3428] font-bold">1.9</span></div>
+                        <div class="flex items-end justify-between text-[11px] menu-item"><span data-eng="GlenDronach 12 YO (43%)" data-kor="글렌드로낙 12년 (43%)">글렌드로낙 12년 (43%)</span><span class="dots-leader"></span><span class="text-[#4a3428] font-bold">1.8</span></div>
+                        <div class="flex items-end justify-between text-[11px] menu-item"><span data-eng="Edradour 10 YO (40%)" data-kor="에드라두어 10년 (40%)">에드라두어 10년 (40%)</span><span class="dots-leader"></span><span class="text-[#4a3428] font-bold">2.5</span></div>
+                        <div class="flex items-end justify-between text-[11px] menu-item"><span data-eng="Glen Garioch 15 YO (53.7%)" data-kor="글렌기어리 15년 (53.7%)">글렌기어리 15년 (53.7%)</span><span class="dots-leader"></span><span class="text-[#4a3428] font-bold">3.5</span></div>
+                        <div class="flex items-end justify-between text-[11px] menu-item"><span data-eng="The Dalmore 12 YO (40%)" data-kor="달모어 12년 (40%)">달모어 12년 (40%)</span><span class="dots-leader"></span><span class="text-[#4a3428] font-bold">1.9</span></div>
                         
                         <div class="text-[9px] font-bold text-[#6b4f3e] uppercase tracking-widest mt-3 mb-1" id="label-islands" data-eng="[ ISLANDS ]" data-kor="[ 아일랜드 ]">[ 아일랜드 ]</div>
-                        <div class="flex items-end justify-between text-[11px] menu-item"><span data-eng="Talisker 10 YO" data-kor="탈리스커 10년">탈리스커 10년</span><span class="dots-leader"></span><span class="text-[#4a3428] font-bold">1.6</span></div>
-                        <div class="flex items-end justify-between text-[11px] menu-item"><span data-eng="Highland Park 12 YO" data-kor="하이랜드 파크 12년">하이랜드 파크 12년</span><span class="dots-leader"></span><span class="text-[#4a3428] font-bold">1.8</span></div>
+                        <div class="flex items-end justify-between text-[11px] menu-item"><span data-eng="Talisker 10 YO (45.8%)" data-kor="탈리스커 10년 (45.8%)">탈리스커 10년 (45.8%)</span><span class="dots-leader"></span><span class="text-[#4a3428] font-bold">1.6</span></div>
+                        <div class="flex items-end justify-between text-[11px] menu-item"><span data-eng="Highland Park 12 YO (40%)" data-kor="하이랜드 파크 12년 (40%)">하이랜드 파크 12년 (40%)</span><span class="dots-leader"></span><span class="text-[#4a3428] font-bold">1.8</span></div>
                     </div>
                 </div>
 
@@ -214,16 +223,16 @@
                 <div class="page-slide">
                     <h3 class="font-serif text-xs text-[#4a3428] font-bold tracking-wider mb-4 border-b border-[#b89047]/30 pb-1 uppercase flex-shrink-0" id="title-islay" data-eng="Scotch Single Malt - Islay Peat" data-kor="스카치 싱글몰트 - 아일레이 피트">스카치 싱글몰트 - 아일레이 피트</h3>
                     <div class="space-y-2.5 overflow-y-auto no-scrollbar flex-1 pr-1 font-medium text-[#443126]" id="islay-list">
-                        <div class="flex items-end justify-between text-[11px] menu-item"><span data-eng="Ardbeg 5 YO" data-kor="아드벡 5년 Wee Beastie">아드벡 5년 Wee Beastie</span><span class="dots-leader"></span><span class="text-[#4a3428] font-bold">1.6</span></div>
-                        <div class="flex items-end justify-between text-[11px] menu-item"><span data-eng="Ardbeg 10 YO" data-kor="아드벡 10년">아드벡 10년</span><span class="dots-leader"></span><span class="text-[#4a3428] font-bold">1.8</span></div>
-                        <div class="flex items-end justify-between text-[11px] menu-item"><span data-eng="Ardbeg Uigeadail" data-kor="아드벡 우기다일">아드벡 우기다일</span><span class="dots-leader"></span><span class="text-[#4a3428] font-bold">2.5</span></div>
-                        <div class="flex items-end justify-between text-[11px] menu-item"><span data-eng="Ardbeg Corryvreckan" data-kor="아드벡 코리브레칸">아드벡 코리브레칸</span><span class="dots-leader"></span><span class="text-[#4a3428] font-bold">2.5</span></div>
-                        <div class="flex items-end justify-between text-[11px] menu-item"><span data-eng="Laphroaig 10 YO" data-kor="라프로익 10년">라프로익 10년</span><span class="dots-leader"></span><span class="text-[#4a3428] font-bold">1.8</span></div>
-                        <div class="flex items-end justify-between text-[11px] menu-item"><span data-eng="Lagavulin 16 YO" data-kor="라가불린 16년">라가불린 16년</span><span class="dots-leader"></span><span class="text-[#4a3428] font-bold">2.5</span></div>
-                        <div class="flex items-end justify-between text-[11px] menu-item"><span data-eng="Bowmore 12 YO" data-kor="보모어 12년">보모어 12년</span><span class="dots-leader"></span><span class="text-[#4a3428] font-bold">1.8</span></div>
-                        <div class="flex items-end justify-between text-[11px] menu-item text-[#84653e] font-semibold"><span data-eng="Highland Park Seoul Edition 3 (30ml)" data-kor="하이랜드 파크 서울 에디션 3 (30ml)">하이랜드 파크 서울 에디션 3 (30ml)</span><span class="dots-leader"></span><span class="text-[#4a3428] font-bold">7.0</span></div>
-                        <div class="flex items-end justify-between text-[11px] menu-item"><span data-eng="Caol Ila 12 YO" data-kor="쿨일라 12년">쿨일라 12년</span><span class="dots-leader"></span><span class="text-[#4a3428] font-bold">1.8</span></div>
-                        <div class="flex items-end justify-between text-[11px] menu-item"><span data-eng="Octomore 16.1 (30ml)" data-kor="옥토모어 16.1 (30ml)">옥토모어 16.1 (30ml)</span><span class="dots-leader"></span><span class="text-[#4a3428] font-bold">5.0</span></div>
+                        <div class="flex items-end justify-between text-[11px] menu-item"><span data-eng="Ardbeg 5 YO (47.4%)" data-kor="아드벡 5년 Wee Beastie (47.4%)">아드벡 5년 Wee Beastie (47.4%)</span><span class="dots-leader"></span><span class="text-[#4a3428] font-bold">1.6</span></div>
+                        <div class="flex items-end justify-between text-[11px] menu-item"><span data-eng="Ardbeg 10 YO (46%)" data-kor="아드벡 10년 (46%)">아드벡 10년 (46%)</span><span class="dots-leader"></span><span class="text-[#4a3428] font-bold">1.8</span></div>
+                        <div class="flex items-end justify-between text-[11px] menu-item"><span data-eng="Ardbeg Uigeadail (54.2%)" data-kor="아드벡 우기다일 (54.2%)">아드벡 우기다일 (54.2%)</span><span class="dots-leader"></span><span class="text-[#4a3428] font-bold">2.5</span></div>
+                        <div class="flex items-end justify-between text-[11px] menu-item"><span data-eng="Ardbeg Corryvreckan (57.1%)" data-kor="아드벡 코리브레칸 (57.1%)">아드벡 코리브레칸 (57.1%)</span><span class="dots-leader"></span><span class="text-[#4a3428] font-bold">2.5</span></div>
+                        <div class="flex items-end justify-between text-[11px] menu-item"><span data-eng="Laphroaig 10 YO (40%)" data-kor="라프로익 10년 (40%)">라프로익 10년 (40%)</span><span class="dots-leader"></span><span class="text-[#4a3428] font-bold">1.8</span></div>
+                        <div class="flex items-end justify-between text-[11px] menu-item"><span data-eng="Lagavulin 16 YO (43%)" data-kor="라가불린 16년 (43%)">라가불린 16년 (43%)</span><span class="dots-leader"></span><span class="text-[#4a3428] font-bold">2.5</span></div>
+                        <div class="flex items-end justify-between text-[11px] menu-item"><span data-eng="Bowmore 12 YO (40%)" data-kor="보모어 12년 (40%)">보모어 12년 (40%)</span><span class="dots-leader"></span><span class="text-[#4a3428] font-bold">1.8</span></div>
+                        <div class="flex items-end justify-between text-[11px] menu-item text-[#84653e] font-semibold"><span data-eng="Highland Park Seoul Edition 3 (30ml) (58.7%)" data-kor="하이랜드 파크 서울 에디션 3 (30ml) (58.7%)">하이랜드 파크 서울 에디션 3 (30ml) (58.7%)</span><span class="dots-leader"></span><span class="text-[#4a3428] font-bold">7.0</span></div>
+                        <div class="flex items-end justify-between text-[11px] menu-item"><span data-eng="Caol Ila 12 YO (43%)" data-kor="쿨일라 12년 (43%)">쿨일라 12년 (43%)</span><span class="dots-leader"></span><span class="text-[#4a3428] font-bold">1.8</span></div>
+                        <div class="flex items-end justify-between text-[11px] menu-item"><span data-eng="Octomore 16.1 (30ml) (59.2%)" data-kor="옥토모어 16.1 (30ml) (59.2%)">옥토모어 16.1 (30ml) (59.2%)</span><span class="dots-leader"></span><span class="text-[#4a3428] font-bold">5.0</span></div>
                     </div>
                 </div>
 
@@ -232,20 +241,20 @@
                     <h3 class="font-serif text-xs text-[#4a3428] font-bold tracking-wider mb-4 border-b border-[#b89047]/30 pb-1 uppercase flex-shrink-0" id="title-world" data-eng="World & Blended Whisky" data-kor="월드 & 블렌디드 위스키">월드 & 블렌디드 위스키</h3>
                     <div class="space-y-2.5 overflow-y-auto no-scrollbar flex-1 pr-1 font-medium text-[#443126]" id="world-blended-list">
                         <div class="text-[9px] font-bold text-[#6b4f3e] uppercase tracking-widest mt-1 mb-1" id="label-taiwan" data-eng="[ TAIWAN MALT (KAVALAN) ]" data-kor="[ 대만 싱글몰트 - 카발란 ]">[ 대만 싱글몰트 - 카발란 ]</div>
-                        <div class="flex items-end justify-between text-[11px] menu-item"><span data-eng="Kavalan Distillery Edition" data-kor="카발란 디스틸러리 셀렉션">카발란 디스틸러리 셀렉션</span><span class="dots-leader"></span><span class="text-[#4a3428] font-bold">1.7</span></div>
+                        <div class="flex items-end justify-between text-[11px] menu-item"><span data-eng="Kavalan Distillery Edition (40%)" data-kor="카발란 디스틸러리 셀렉션 (40%)">카발란 디스틸러리 셀렉션 (40%)</span><span class="dots-leader"></span><span class="text-[#4a3428] font-bold">1.7</span></div>
                         <div class="flex items-end justify-between text-[11px] menu-item"><span data-eng="Kavalan Solist Bourbon (30ml)" data-kor="카발란 솔리스트 버번 (30ml)">카발란 솔리스트 버번 (30ml)</span><span class="dots-leader"></span><span class="text-[#4a3428] font-bold">3.5</span></div>
                         <div class="flex items-end justify-between text-[11px] menu-item"><span data-eng="Kavalan Solist Port (30ml)" data-kor="카발란 솔리스트 포트 (30ml)">카발란 솔리스트 포트 (30ml)</span><span class="dots-leader"></span><span class="text-[#4a3428] font-bold">3.5</span></div>
                         <div class="flex items-end justify-between text-[11px] menu-item"><span data-eng="Kavalan Solist Sherry (30ml)" data-kor="카발란 솔리스트 셰리 (30ml)">카발란 솔리스트 셰리 (30ml)</span><span class="dots-leader"></span><span class="text-[#4a3428] font-bold">3.7</span></div>
                         <div class="flex items-end justify-between text-[11px] menu-item"><span data-eng="Kavalan Solist Vinho Barrique (30ml)" data-kor="카발란 솔리스트 비노 바리끄 (30ml)">카발란 솔리스트 비노 바리끄 (30ml)</span><span class="dots-leader"></span><span class="text-[#4a3428] font-bold">4.0</span></div>
 
                         <div class="text-[9px] font-bold text-[#6b4f3e] uppercase tracking-widest mt-3 mb-1" id="label-korean" data-eng="[ KOREAN WHISKY ]" data-kor="[ 한국 전통 주류 & 위스키 ]">[ 한국 전통 주류 & 위스키 ]</div>
-                        <div class="flex items-end justify-between text-[11px] menu-item"><span data-eng="Hwayo X.P" data-kor="화요 X.P (프리미엄 쌀 위스키)">화요 X.P</span><span class="dots-leader"></span><span class="text-[#4a3428] font-bold">2.0</span></div>
-                        <div class="flex items-end justify-between text-[11px] menu-item text-[#84653e] font-semibold"><span data-eng="KI ONE Batch 8 CS" data-kor="기원 Cask Strength Batch 8">기원 Cask Strength Batch 8</span><span class="dots-leader"></span><span class="text-[#4a3428] font-bold">2.5</span></div>
+                        <div class="flex items-end justify-between text-[11px] menu-item"><span data-eng="Hwayo X.P (41%)" data-kor="화요 X.P (프리미엄 쌀 위스키) (41%)">화요 X.P (프리미엄 쌀 위스키) (41%)</span><span class="dots-leader"></span><span class="text-[#4a3428] font-bold">2.0</span></div>
+                        <div class="flex items-end justify-between text-[11px] menu-item text-[#84653e] font-semibold"><span data-eng="KI ONE Batch 8 CS (56.4%)" data-kor="기원 Cask Strength Batch 8 (56.4%)">기원 Cask Strength Batch 8 (56.4%)</span><span class="dots-leader"></span><span class="text-[#4a3428] font-bold">2.5</span></div>
 
                         <div class="text-[9px] font-bold text-[#6b4f3e] uppercase tracking-widest mt-3 mb-1" id="label-blended" data-eng="[ BLENDED ]" data-kor="[ 블렌디드 위스키 ]">[ 블렌디드 위스키 ]</div>
-                        <div class="flex items-end justify-between text-[11px] menu-item"><span data-eng="Monkey Shoulder" data-kor="몽키 숄더">몽키 숄더</span><span class="dots-leader"></span><span class="text-[#4a3428] font-bold">1.3</span></div>
-                        <div class="flex items-end justify-between text-[11px] menu-item"><span data-eng="Maltman 25 YO (30ml)" data-kor="몰트만 25년 (30ml) 독병">몰트만 25년 (30ml) 독병</span><span class="dots-leader"></span><span class="text-[#4a3428] font-bold">3.5</span></div>
-                        <div class="flex items-end justify-between text-[11px] menu-item"><span data-eng="Suntory Kakubin (Super Chilled)" data-kor="산토리 가쿠빈 (슈퍼 칠드)">산토리 가쿠빈 (슈퍼 칠드)</span><span class="dots-leader"></span><span class="text-[#4a3428] font-bold">1.2</span></div>
+                        <div class="flex items-end justify-between text-[11px] menu-item"><span data-eng="Monkey Shoulder (40%)" data-kor="몽키 숄더 (40%)">몽키 숄더 (40%)</span><span class="dots-leader"></span><span class="text-[#4a3428] font-bold">1.3</span></div>
+                        <div class="flex items-end justify-between text-[11px] menu-item"><span data-eng="Maltman 25 YO (30ml) (46.2%)" data-kor="몰트만 25년 (30ml) 독병 (46.2%)">몰트만 25년 (30ml) 독병 (46.2%)</span><span class="dots-leader"></span><span class="text-[#4a3428] font-bold">3.5</span></div>
+                        <div class="flex items-end justify-between text-[11px] menu-item"><span data-eng="Suntory Kakubin (Super Chilled) (40%)" data-kor="산토리 가쿠빈 (슈퍼 칠드) (40%)">산토리 가쿠빈 (슈퍼 칠드) (40%)</span><span class="dots-leader"></span><span class="text-[#4a3428] font-bold">1.2</span></div>
                     </div>
                 </div>
 
@@ -254,24 +263,27 @@
                     <h3 class="font-serif text-xs text-[#4a3428] font-bold tracking-wider mb-4 border-b border-[#b89047]/30 pb-1 uppercase flex-shrink-0" id="title-bourbon" data-eng="Bourbon & Others" data-kor="버번 & 기타 스피릿">버번 & 기타 스피릿</h3>
                     <div class="space-y-2.5 overflow-y-auto no-scrollbar flex-1 pr-1 font-medium text-[#443126]" id="bourbon-etc-list">
                         <div class="text-[9px] font-bold text-[#6b4f3e] uppercase tracking-widest mt-1 mb-1" id="label-bourbon" data-eng="[ BOURBON ]" data-kor="[ 아메리칸 버번 ]">[ 아메리칸 버번 ]</div>
-                        <div class="flex items-end justify-between text-[11px] menu-item"><span data-eng="Maker's Mark" data-kor="메이커스 마크">메이커스 마크</span><span class="dots-leader"></span><span class="text-[#4a3428] font-bold">1.2</span></div>
-                        <div class="flex items-end justify-between text-[11px] menu-item"><span data-eng="Buffalo Trace" data-kor="버팔로 트레이스">버팔로 트레이스</span><span class="dots-leader"></span><span class="text-[#4a3428] font-bold">1.2</span></div>
-                        <div class="flex items-end justify-between text-[11px] menu-item"><span data-eng="Wild Turkey 101 8 YO Bourbon" data-kor="와일드 터키 101 8년">와일드 터키 101 8년</span><span class="dots-leader"></span><span class="text-[#4a3428] font-bold">1.3</span></div>
-                        <div class="flex items-end justify-between text-[11px] menu-item text-[#84653e] font-semibold"><span data-eng="Maker's Mark CS 25-03" data-kor="메이커스 마크 CS 25-03">메이커스 마크 CS 25-03</span><span class="dots-leader"></span><span class="text-[#4a3428] font-bold">1.6</span></div>
-                        <div class="flex items-end justify-between text-[11px] menu-item"><span data-eng="Sagamore Spirit Signature Rye" data-kor="사가모어 스피릿 시그니처 라이">사가모어 스피릿 시그니처 라이</span><span class="dots-leader"></span><span class="text-[#4a3428] font-bold">1.7</span></div>
-                        <div class="flex items-end justify-between text-[11px] menu-item"><span data-eng="Wild Turkey Kentucky Spirit (TY-R)" data-kor="와일드 터키 켄터키 스피릿 (TY-R)">와일드 터키 켄터키 스피릿 (TY-R)</span><span class="dots-leader"></span><span class="text-[#4a3428] font-bold">1.8</span></div>
-                        <div class="flex items-end justify-between text-[11px] menu-item"><span data-eng="Knob Creek 9 YO" data-kor="놉 크릭 9년">놉 크릭 9년</span><span class="dots-leader"></span><span class="text-[#4a3428] font-bold">1.8</span></div>
-                        <div class="flex items-end justify-between text-[11px] menu-item"><span data-eng="Russell's Reserve Single Barrel" data-kor="러셀 리저브 싱글 배럴">러셀 리저브 싱글 배럴</span><span class="dots-leader"></span><span class="text-[#4a3428] font-bold">1.9</span></div>
-                        <div class="flex items-end justify-between text-[11px] menu-item"><span data-eng="Booker's 2025-01E (30ml)" data-kor="부커스 2025-01E (30ml) CS">Booker's 2025-01E (30ml)</span><span class="dots-leader"></span><span class="text-[#4a3428] font-bold">3.0</span></div>
+                        <div class="flex items-end justify-between text-[11px] menu-item"><span data-eng="Maker's Mark (45%)" data-kor="메이커스 마크 (45%)">메이커스 마크 (45%)</span><span class="dots-leader"></span><span class="text-[#4a3428] font-bold">1.2</span></div>
+                        <div class="flex items-end justify-between text-[11px] menu-item"><span data-eng="Buffalo Trace (45%)" data-kor="버팔로 트레이스 (45%)">버팔로 트레이스 (45%)</span><span class="dots-leader"></span><span class="text-[#4a3428] font-bold">1.2</span></div>
+                        <div class="flex items-end justify-between text-[11px] menu-item"><span data-eng="Wild Turkey 101 8 YO Bourbon (50.5%)" data-kor="와일드 터키 101 8년 (50.5%)">와일드 터키 101 8년 (50.5%)</span><span class="dots-leader"></span><span class="text-[#4a3428] font-bold">1.3</span></div>
+                        <div class="flex items-end justify-between text-[11px] menu-item text-[#84653e] font-semibold"><span data-eng="Maker's Mark CS 25-03 (56.2%)" data-kor="메이커스 마크 CS 25-03 (56.2%)">메이커스 마크 CS 25-03 (56.2%)</span><span class="dots-leader"></span><span class="text-[#4a3428] font-bold">1.6</span></div>
+                        <div class="flex items-end justify-between text-[11px] menu-item"><span data-eng="Sagamore Spirit Signature Rye (41.5%)" data-kor="사가모어 스피릿 시그니처 라이 (41.5%)">사가모어 스피릿 시그니처 라이 (41.5%)</span><span class="dots-leader"></span><span class="text-[#4a3428] font-bold">1.7</span></div>
+                        <div class="flex items-end justify-between text-[11px] menu-item"><span data-eng="Wild Turkey Kentucky Spirit (TY-R) (50.5%)" data-kor="와일드 터키 켄터키 스피릿 (TY-R) (50.5%)">와일드 터키 켄터키 스피릿 (TY-R) (50.5%)</span><span class="dots-leader"></span><span class="text-[#4a3428] font-bold">1.8</span></div>
+                        <div class="flex items-end justify-between text-[11px] menu-item"><span data-eng="Knob Creek 9 YO (50%)" data-kor="놉 크릭 9년 (50%)">놉 크릭 9년 (50%)</span><span class="dots-leader"></span><span class="text-[#4a3428] font-bold">1.8</span></div>
+                        <div class="flex items-end justify-between text-[11px] menu-item"><span data-eng="Russell's Reserve Single Barrel (55%)" data-kor="러셀 리저브 싱글 배럴 (55%)">러셀 리저브 싱글 배럴 (55%)</span><span class="dots-leader"></span><span class="text-[#4a3428] font-bold">1.9</span></div>
+                        <div class="flex items-end justify-between text-[11px] menu-item"><span data-eng="Booker's 2025-01E (30ml) (62.3%)" data-kor="부커스 2025-01E (30ml) (62.3%)">Booker's 2025-01E (30ml) (62.3%)</span><span class="dots-leader"></span><span class="text-[#4a3428] font-bold">3.0</span></div>
                         
                         <div class="text-[9px] font-bold text-[#6b4f3e] uppercase tracking-widest mt-3 mb-1" id="label-tequila" data-eng="[ TEQUILA ]" data-kor="[ 데킬라 ]">[ 데킬라 ]</div>
-                        <div class="flex items-end justify-between text-[11px] menu-item"><span data-eng="Tequila Shot" data-kor="데킬라 샷">데킬라 샷</span><span class="dots-leader"></span><span class="text-[#4a3428] font-bold">0.5</span></div>
-                        <div class="flex items-end justify-between text-[11px] menu-item"><span data-eng="Jose Cuervo Especial" data-kor="호세 쿠엘보 에스페셜">호세 쿠엘보 에스페셜</span><span class="dots-leader"></span><span class="text-[#4a3428] font-bold">0.7</span></div>
+                        <div class="flex items-end justify-between text-[11px] menu-item"><span data-eng="Tequila Shot (40%)" data-kor="데킬라 샷 (40%)">데킬라 샷 (40%)</span><span class="dots-leader"></span><span class="text-[#4a3428] font-bold">0.5</span></div>
+                        <div class="flex items-end justify-between text-[11px] menu-item"><span data-eng="Jose Cuervo Especial (40%)" data-kor="호세 쿠엘보 에스페셜 (40%)">호세 쿠엘보 에스페셜 (40%)</span><span class="dots-leader"></span><span class="text-[#4a3428] font-bold">0.7</span></div>
                         
                         <div class="text-[9px] font-bold text-[#6b4f3e] uppercase tracking-widest mt-3 mb-1" id="label-cognac" data-eng="[ COGNAC ]" data-kor="[ 브랜디 & 꼬냑 ]">[ 브랜디 & 꼬냑 ]</div>
-                        <div class="flex items-end justify-between text-[11px] menu-item"><span data-eng="Hennessy VSOP" data-kor="헤네시 V.S.O.P">Hennessy VSOP</span><span class="dots-leader"></span><span class="text-[#4a3428] font-bold">1.6</span></div>
-                        <div class="flex items-end justify-between text-[11px] menu-item"><span data-eng="Remy martin VSOP" data-kor="레미 마틴 V.S.O.P">Remy martin VSOP</span><span class="dots-leader"></span><span class="text-[#4a3428] font-bold">1.7</span></div>
-                        <div class="flex items-end justify-between text-[11px] menu-item"><span data-eng="Hennessy XO (30ml)" data-kor="헤네시 X.O (30ml)">Hennessy XO (30ml)</span><span class="dots-leader"></span><span class="text-[#4a3428] font-bold">3.5</span></div>
+                        <div class="flex items-end justify-between text-[11px] menu-item"><span data-eng="Hennessy VSOP (40%)" data-kor="헤네시 V.S.O.P (40%)">Hennessy VSOP (40%)</span><span class="dots-leader"></span><span class="text-[#4a3428] font-bold">1.6</span></div>
+                        <div class="flex items-end justify-between text-[11px] menu-item"><span data-eng="Remy martin VSOP (40%)" data-kor="레미 마틴 V.S.O.P (40%)">Remy martin VSOP (40%)</span><span class="dots-leader"></span><span class="text-[#4a3428] font-bold">1.7</span></div>
+                        <div class="flex items-end justify-between text-[11px] menu-item"><span data-eng="Hennessy XO (30ml) (40%)" data-kor="헤네시 X.O (30ml) (40%)">Hennessy XO (30ml) (40%)</span><span class="dots-leader"></span><span class="text-[#4a3428] font-bold">3.5</span></div>
+
+                        <div class="text-[9px] font-bold text-[#6b4f3e] uppercase tracking-widest mt-3 mb-1" id="label-beer" data-eng="[ BEER ]" data-kor="[ 맥주 ]">[ 맥주 ]</div>
+                        <div class="flex items-end justify-between text-[11px] menu-item"><span data-eng="Guinness Draft Beer (4.2%)" data-kor="기네스 생맥주 (4.2%)">Guinness Draft Beer (4.2%)</span><span class="dots-leader"></span><span class="text-[#4a3428] font-bold">1.2</span></div>
                     </div>
                 </div>
 
@@ -453,7 +465,7 @@
             // 2. Translate Static titles & structures
             const translatables = [
                 'guide-title', 'guide-desc', 'title-speyside', 'title-highland', 'title-islay', 'title-world', 'title-bourbon', 'title-cocktail-1', 'title-cocktail-2', 'cocktail-info',
-                'label-highlands', 'label-islands', 'label-taiwan', 'label-korean', 'label-blended', 'label-bourbon', 'label-tequila', 'label-cognac', 'label-signature', 'label-classic-1', 'label-classic-2', 'label-glass-wine', 'label-fun', 'label-shooter', 'label-non-alcohol', 'label-food'
+                'label-highlands', 'label-islands', 'label-taiwan', 'label-korean', 'label-blended', 'label-bourbon', 'label-tequila', 'label-cognac', 'label-signature', 'label-classic-1', 'label-classic-2', 'label-glass-wine', 'label-fun', 'label-shooter', 'label-non-alcohol', 'label-food', 'label-beer'
             ];
             translatables.forEach(id => {
                 const el = document.getElementById(id);
@@ -501,15 +513,21 @@
             }
         }
 
-        // 데일리샷 탐색 및 리다이렉트 처리 글로벌 리스너
+        // 데일리샷 탐색 및 리다이렉트 처리 글로벌 리스너 (칵테일 컨테이너는 제외)
         document.getElementById('capture-zone').addEventListener('click', function(e) {
-            // Find the closest span that represents a menu item name
+            // 칵테일 1, 2 목록 영역 클릭 시 데일리샷 연동을 막고 그냥 정적 텍스트로 보존
+            if (e.target.closest('#cocktail-list-1') || e.target.closest('#cocktail-list-2')) {
+                return;
+            }
+
+            // 그 외 위스키류 및 기타 주류는 데일리샷 스마트 연동 처리
             const span = e.target.closest('.menu-item span[data-eng]');
             if (span) {
-                // Determine appropriate search phrase
-                const query = currentLang === 'ko' ? span.getAttribute('data-kor') : span.getAttribute('data-eng');
+                // 적합한 검색어 픽업 (검색 정확도를 높이기 위해 도수 정보 '(XX%)'를 잘라냄)
+                let rawQuery = currentLang === 'ko' ? span.getAttribute('data-kor') : span.getAttribute('data-eng');
+                let query = rawQuery ? rawQuery.replace(/\s*\(\d+(\.\d+)?%\)/, '').trim() : '';
                 if (query) {
-                    // Open Daily Shot mobile search engine results in a new tab
+                    // 데일리샷 모바일 주류 검색 엔진 호출
                     window.open(`https://dailyshot.co/m/search/result?q=${encodeURIComponent(query)}`, '_blank');
                 }
             }
